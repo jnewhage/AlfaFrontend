@@ -1,0 +1,160 @@
+import React, { Component } from 'react';
+import '../assets/css/alfa_style.css';
+// import '../assets/css/home.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import '../assets/css/login.css';
+// import '../assets/css/mechanics.css';
+import '../assets/css/checkout.css';
+
+
+class CartComponent extends Component {
+	constructor() {
+		super();
+		this.state = {
+			accounts2: []
+		};
+	}
+
+	switchPage(e) {
+		alert("here!!!!")
+		window.location = "./checkout.js";
+	}
+
+	componentDidMount() {
+		fetch('http://localhost:3001/cart/')
+			.then(res => res.json())
+			.then(data => {
+				this.setState(
+					(prevState) => { return { accounts2: data.info } }
+				)
+			});
+	}
+
+	getData() {
+		fetch('http://localhost:3001/cart/')
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
+				this.setState(
+					(prevState) => { return { accounts2: data } }  // I added the .info to data.info
+				)
+			});
+	}
+
+	sum() {
+		let sums = 0;
+
+		for (var i = 0; i < this.state.accounts2.length; i++) {
+			sums += this.state.accounts2[i].price;
+		}
+
+		sums = sums * 100;
+		sums = sums / 100;
+
+		return sums;
+	}
+
+	// delData(itemId, itemDescription, itemPrice) {
+	delData(e, items, items2) {
+
+		alert("outside, " + items.description)
+		alert("outside, " + items)
+		alert("outside2, " + items2)
+		alert("outside2, " + items2.description)
+
+
+
+		// console.log("outside, " + items)
+
+		// for (var i = 0; i < items.length; i++) {
+		// 	// alert("description:", items.description)
+		// 	// alert("price:", items.price)
+		// 	alert("inside, " + items[i].description)
+		// }
+		let data = { id: items.id, description: items.description, price: items.price };
+		// let data = { id: itemId, description: itemDescription, price: itemPrice };
+		let options = {
+			method: 'delete',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		}
+		fetch('http://localhost:3001/cart/', options);
+		// }
+		window.location = "./cart.js";
+
+	}
+
+
+
+	render() {
+		var mon = this.sum();
+
+		return (
+			<div className="main">
+				<main className="page payment-page" style={{ marginTop: "-1em" }}>
+					<section className="payment-form dark">
+						<div className="container">
+							<div className="block-heading">
+								<h1 align="center" >Shopping Cart</h1>
+							</div>
+							<form onSubmit={this.switchPage.bind(this)}>
+								<div className="products">
+									{this.state.accounts2.map((items) => <span key={items.id}>
+										<div className="item">
+											<span className="price" style={{ paddingTop: "0.5em" }}>${items.price}</span>
+
+											<p className="item-name">
+
+
+												{/* <input
+													ref="card-holder"
+													name="card-holder"
+													id="card-holder"
+													type="text"
+													className="form-control"
+													placeholder="Card Holder"
+													onChange={this.handleChange.bind(this, "card-holder")}
+													value={this.state.fields["card-holder"]}
+													aria-describedby="basic-addon1"
+													aria-label="Card Holder"
+													required="required" /> */}
+
+
+												<button
+													type="submit"
+
+													name={items.id}
+													// ref={items.id}
+													// name={items.id}
+													// id={items.id}
+
+													value={items}
+													className="btn btn-lg btn-primary"
+													onClick={this.delData.bind(this, {items}, {items} )}
+													style={{ marginRight: "1em" }}> X</button>
+												{items.description}
+											</p>
+										</div>
+									</span>)}
+									<div className="total">Total<span className="price">${mon}</span></div>
+								</div>
+								<div className="card-details">
+									<div className="row">
+										<div className="form-group col-sm-12">
+											<button type="submit" className="btn btn-success btn-lg btn-block" >Proceed to Checkout</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</section>
+				</main>
+			</div>
+		)
+	}
+}
+
+
+export default CartComponent;

@@ -1,0 +1,78 @@
+body {
+    margin: 0px;
+    font-size: 1em;
+    background-color: lightgrey;
+}
+
+  .table-wrapper-scroll-y {
+    display: block;
+  }
+
+  .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+  }
+
+  .headerP {
+    font-size: 18px;
+    padding-bottom: 15px;
+    font-weight: bold;
+  }
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 70% 70% 2%;
+  grid-gap: 10px;
+  margin-bottom:20px;
+  margin-left:10em;
+}
+
+.darken-grey-text {
+    color: #2E2E2E;
+  }
+
+h1 {
+    font-weight: bold;
+    position:relative;
+    font-size: 2em;
+  }
+
+  .img {
+    margin-top: 1em;
+    width: 100%;
+    height: 20%;
+  } 
+
+  .description {
+    color: lightgray;
+    font-size: 13px;
+    float: left;
+    margin-bottom: 25px;
+  }
+
+  .price {
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .buy-form {
+    margin-bottom:30px;
+  }
+
+  .buy-form .btn {
+    float: right;
+    margin-right: 120px;
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    border: solid 1px #0076a3;
+    border-right: 0px;
+    background: #0095cd;
+    border-radius: 5px 5px;
+  }
+

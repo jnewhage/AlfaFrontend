@@ -1,0 +1,95 @@
+body {
+    margin: 0px;
+    font-size: 1em;
+    background-color: lightgrey;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+img {
+    margin-top: 1em;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+#h1 {
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+#cars .item {
+    height: 275px;
+    padding: 10px;
+    color: #000000;
+    cursor: pointer;
+    background-color: lightyellow;
+    transition: all .5s ease;
+}
+
+#cars .item:hover {
+    background-color: rgba(244, 244, 244, 1);
+    transition: all .3s ease;
+    -webkit-box-shadow: 0px 15px 20px -15px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 15px 20px -15px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 15px 20px -15px rgba(0, 0, 0, 0.75);
+}
+
+#cars .car-parts {
+    /* position: absolute; */
+    position: fixed;
+
+    top: 45%;
+    left: 50%;
+    width: 80%;
+    /* height: 80%; */
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+#cars .car-parts img {
+    transition: all .7s ease;
+}
+
+#main {
+    position: relative;
+    padding-top: 4%;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 8em;
+    padding-top: 20px;
+}
+
+.grid-container {
+    margin-top: 8em;
+    padding-bottom: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.grid-child {
+    margin-bottom: 3em;
+}
