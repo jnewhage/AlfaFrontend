@@ -21,7 +21,7 @@ class SignupComponent extends Component {
 
 
 	componentDidMount() {
-		fetch('http://localhost:3001/signup/')
+		fetch('https://alfafrontend.herokuapp.com/signup/')
 			.then(res => res.json())
 			.then(data => {
 				this.setState(
@@ -31,7 +31,7 @@ class SignupComponent extends Component {
 	}
 
 	getData() {
-		fetch('http://localhost:3001/signup/')
+		fetch('https://alfafrontend.herokuapp.com/signup/')
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
@@ -55,7 +55,7 @@ class SignupComponent extends Component {
 			},
 			body: JSON.stringify(data)
 		}
-		fetch('http://localhost:3001/signup/', options);
+		fetch('https://alfafrontend.herokuapp.com/signup/', options);
 	}
 
 	handleChange(field, e) {

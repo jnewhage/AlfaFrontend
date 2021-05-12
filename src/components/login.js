@@ -21,7 +21,7 @@ class LoginComponent extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/login/')
+    fetch('https://alfafrontend.herokuapp.com/login/')
       .then(res => res.json())
       .then(data => {
         this.setState(
@@ -31,7 +31,7 @@ class LoginComponent extends Component {
   }
 
   getData() {
-    fetch('http://localhost:3001/login/')
+    fetch('https://alfafrontend.herokuapp.com/login/')
       .then(res => res.json())
       .then(data => {
         console.log(data);

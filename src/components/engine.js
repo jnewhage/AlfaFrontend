@@ -18,7 +18,7 @@ class EngineComponent extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/engine/')
+    fetch('https://alfafrontend.herokuapp.com/engine/')
       .then(res => res.json())
       .then(data => {
         this.setState(
@@ -38,7 +38,7 @@ class EngineComponent extends Component {
       },
       body: JSON.stringify(data)
     }
-    fetch('http://localhost:3001/engine/', options);
+    fetch('https://alfafrontend.herokuapp.com/engine/', options);
   }
 
   contactSubmit(e, flg, desc, price) {
