@@ -47,7 +47,7 @@ class CartComponent extends Component {
 	}
 
 	delData(itemDesc, itemPrice, itemId, e) {
-		let flgg = true;
+		// let flgg = true;
 		let data = { id: itemId, description: itemDesc, price: itemPrice };
 
 		let options = {
@@ -59,10 +59,10 @@ class CartComponent extends Component {
 		}
 		fetch('https://alfaback.herokuapp.com/cart/', options);
 
-		if (flgg) {
-			flgg = false;
-			window.location = "./cart.js";
-		}
+		// if (flgg) {
+		// 	flgg = false;
+		window.location = "./cart.js";
+		// }
 	}
 
 	switchPage() {
