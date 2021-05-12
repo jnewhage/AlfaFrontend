@@ -14,7 +14,7 @@ class TwitterComponent extends Component {
 
 
     componentDidMount() {
-        fetch('https://alfafrontend.herokuapp.com/tweets/')
+        fetch('https://alfaback.herokuapp.com/tweets/')
             .then(res => res.json())
             .then(data => {
                 this.setState(
@@ -24,7 +24,7 @@ class TwitterComponent extends Component {
     }
 
     getData() {
-        fetch('https://alfafrontend.herokuapp.com/tweets/')
+        fetch('https://alfaback.herokuapp.com/tweets/')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

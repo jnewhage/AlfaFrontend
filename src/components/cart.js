@@ -13,7 +13,7 @@ class CartComponent extends Component {
 	}
 
 	componentDidMount() {
-		fetch('https://alfafrontend.herokuapp.com/cart/')
+		fetch('https://alfaback.herokuapp.com/cart/')
 			.then(res => res.json())
 			.then(data => {
 				this.setState(
@@ -23,7 +23,7 @@ class CartComponent extends Component {
 	}
 
 	getData() {
-		fetch('https://alfafrontend.herokuapp.com/cart/')
+		fetch('https://alfaback.herokuapp.com/cart/')
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
@@ -57,7 +57,7 @@ class CartComponent extends Component {
 			},
 			body: JSON.stringify(data)
 		}
-		fetch('https://alfafrontend.herokuapp.com/cart/', options);
+		fetch('https://alfaback.herokuapp.com/cart/', options);
 
 		if (flgg) {
 			flgg = false;

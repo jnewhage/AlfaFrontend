@@ -18,7 +18,7 @@ class BrakesComponent extends Component {
   }
 
   componentDidMount() {
-    fetch('https://alfafrontend.herokuapp.com/brakes/')
+    fetch('https://alfaback.herokuapp.com/brakes/')
       .then(res => res.json())
       .then(data => {
         this.setState(
@@ -37,7 +37,7 @@ class BrakesComponent extends Component {
       },
       body: JSON.stringify(data)
     }
-    fetch('https://alfafrontend.herokuapp.com/brakes/', options);
+    fetch('https://alfaback.herokuapp.com/brakes/', options);
   }
 
   contactSubmit(e, flg, desc, price) {

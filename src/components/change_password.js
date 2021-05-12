@@ -21,7 +21,7 @@ class PasswordComponent extends Component {
 
 
 	componentDidMount() {
-		fetch('https://alfafrontend.herokuapp.com/change_password/')
+		fetch('https://alfaback.herokuapp.com/change_password/')
 			.then(res => res.json())
 			.then(data => {
 				this.setState(
@@ -69,11 +69,11 @@ class PasswordComponent extends Component {
 			},
 			body: JSON.stringify(data)
 		}
-		fetch('https://alfafrontend.herokuapp.com/change_password/', options);
+		fetch('https://alfaback.herokuapp.com/change_password/', options);
 	}
 
 	getData() {
-		fetch('https://alfafrontend.herokuapp.com/change_password/')
+		fetch('https://alfaback.herokuapp.com/change_password/')
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);

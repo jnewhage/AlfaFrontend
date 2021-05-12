@@ -19,7 +19,7 @@ class ElectricalComponent extends Component {
 
 
   componentDidMount() {
-    fetch('https://alfafrontend.herokuapp.com/electrical/')
+    fetch('https://alfaback.herokuapp.com/electrical/')
       .then(res => res.json())
       .then(data => {
         this.setState(
@@ -38,7 +38,7 @@ class ElectricalComponent extends Component {
       },
       body: JSON.stringify(data)
     }
-    fetch('https://alfafrontend.herokuapp.com/electrical/', options);
+    fetch('https://alfaback.herokuapp.com/electrical/', options);
   }
 
   contactSubmit(e, flg, desc, price) {

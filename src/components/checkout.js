@@ -135,7 +135,7 @@ class CheckoutComponent extends Component {
 
 
     componentDidMount() {
-        fetch('https://alfafrontend.herokuapp.com/checkout/')
+        fetch('https://alfaback.herokuapp.com/checkout/')
             .then(res => res.json())
             .then(data => {
                 this.setState(
@@ -145,7 +145,7 @@ class CheckoutComponent extends Component {
     }
 
     getData() {
-        fetch('https://alfafrontend.herokuapp.com/checkout/')
+        fetch('https://alfaback.herokuapp.com/checkout/')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -178,7 +178,7 @@ class CheckoutComponent extends Component {
                 },
                 body: JSON.stringify(data)
             }
-            fetch('https://alfafrontend.herokuapp.com/checkout/', options);
+            fetch('https://alfaback.herokuapp.com/checkout/', options);
         }
     }
 
