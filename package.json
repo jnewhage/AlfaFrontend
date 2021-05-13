@@ -30,7 +30,7 @@
       "react-app/jest"
     ]
   },
- "resolutinos": {
+ "resolutions": {
     "react-dev-utils": "^10.2.1"
   },
   "browserslist": {
